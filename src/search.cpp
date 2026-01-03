@@ -22,4 +22,4 @@ void search(const string &filename,const string& index) {
     }
 
     file.close();
-}
+} 
