@@ -24,3 +24,8 @@ void updateRecord(const string &filename, const string &rollNumber, const string
 void deleteRecord(const string &filename, const string &rollNumber);
 
 #endif
+// function to create the file
+void createFile(const string &filename);
+
+// Function to read the existing file
+void readFile(const string &filename);
