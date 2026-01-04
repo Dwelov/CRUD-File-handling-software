@@ -1,0 +1,4 @@
+•	readFile():
+This function opens an existing file and reads its contents line by line.
+If the file cannot be opened, it displays an error message; otherwise,
+it prints all lines to the console.
