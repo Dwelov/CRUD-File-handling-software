@@ -1,6 +1,0 @@
-Search Function Description
-
-The search function is used to search a specific word inside a file.
-It reads the file line by line and checks whether the given word exists.
-If found, it prints the line; otherwise, it displays a message that the
-index was not found.
