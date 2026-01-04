@@ -129,3 +129,43 @@ void deleteRecord(const string &filename, const string &rollNumber)
 
     cout << "Record for roll number " << rollNumber << " deleted successfully." << endl;
 }
+void createFile(const string &filename)
+{
+    string word = filename;
+    string extract;
+    size_t index = word.find('.');
+    if (index != string::npos)
+    {
+        extract = word.substr(index + 1);
+    }
+    else
+    {
+        cerr << "Invalid file extension please add the .csv file extension" << endl;
+        return;
+    }
+
+    if (extract != "csv")
+    {
+        cerr << "Invalid file extension please add the .csv file extension" << endl;
+        return;
+    }
+    ofstream file(word);
+    cout << "File created successfully" << endl;
+}
+
+// Function to read the existing file
+void readFile(const string &filename)
+{
+    ifstream file(filename);
+    if (!file)
+    {
+        cerr << "Error opening file for reading." << endl;
+        return;
+    }
+    string line;
+    while (getline(file, line))
+    {
+        cout << line << endl;
+    }
+    file.close();
+}
