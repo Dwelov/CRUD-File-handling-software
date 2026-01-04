@@ -1,0 +1,94 @@
+📘 Project Description: Student Record Management Functions
+This project manages student records stored in a CSV file (file.csv). Each record contains:
+
+Roll Number (unique identifier)
+
+Name
+
+Marks (multiple subjects stored as integers)
+
+Average (calculated float value)
+
+The following functions handle adding, updating, and deleting student records.
+
+1. addStudents()
+Purpose
+Adds a new student record to the CSV file.
+
+Operates in append mode so existing data is preserved.
+
+Working
+Opens the file using ofstream with ios::app.
+
+Checks if the file exists; if not, prints an error.
+
+Writes the new student’s roll number, name, marks, and average in comma-separated format.
+
+Closes the file and confirms success.
+
+Example Flow
+Code
+Input: RollNumber=101, Name="Ali", Marks={85, 90, 78}, Average=84.3
+File after append:
+101,Ali,85,90,78,84.3
+2. updateRecord()
+Purpose
+Updates an existing student’s record in the CSV file.
+
+Searches for the student using their roll number.
+
+Working
+Opens the file using ifstream.
+
+Reads all lines into a vector.
+
+If a line starts with the given roll number, it is replaced with the updated data.
+
+If roll number not found, prints an error.
+
+Rewrites the entire file with updated content using ofstream.
+
+Example Flow
+Code
+Before update:
+101,Ali,85,90,78,84.3
+
+Update: Name="Ali Khan", Marks={88, 92, 80}, Average=86.6
+
+After update:
+101,Ali Khan,88,92,80,86.6
+3. deleteRecord()
+Purpose
+Deletes a student’s record from the CSV file.
+
+Searches by roll number.
+
+Working
+Opens the file using ifstream.
+
+Reads all lines into a vector except the one matching the roll number.
+
+If roll number not found, prints an error.
+
+Rewrites the file (using ofstream with ios::trunc) excluding the deleted record.
+
+Confirms deletion.
+
+Example Flow
+Code
+Before delete:
+101,Ali,85,90,78,84.3
+102,Sara,88,91,79,86.0
+
+Delete: RollNumber=101
+
+After delete:
+102,Sara,88,91,79,86.0
+✨ Key Features of These Functions
+File Handling: Uses ifstream and ofstream for reading/writing CSV files.
+
+Error Handling: Displays clear error messages if file not found or roll number missing.
+
+Data Integrity: Ensures records are properly formatted and file is safely rewritten.
+
+Flexibility: Supports multiple marks per student using vector<int>.
